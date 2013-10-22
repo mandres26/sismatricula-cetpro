@@ -15,7 +15,7 @@
         <h1>
             <a href="registro.jsp">TEXTO DE ENLACE</a> 
             <br/>
-            Hello team!   modificando 
+            Hello team! modificando James
         </h1>
     </body>
 </html>
