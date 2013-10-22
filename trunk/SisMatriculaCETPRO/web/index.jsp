@@ -12,6 +12,10 @@
         <title>Proyecto tp2</title>
     </head>
     <body>
-        <h1>Hello team!   modificando </h1>
+        <h1>
+            <a href="registro.jsp">TEXTO DE ENLACE</a> 
+            <br/>
+            Hello team!   modificando 
+        </h1>
     </body>
 </html>
