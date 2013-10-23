@@ -13,9 +13,8 @@
     </head>
     <body>
         <h1>
-            <a href="regAlumno.jsp">TEXTO DE ENLACE</a> 
-            <br/>
-            Hello team! modificando James
+            Hello team!
         </h1>
+        <a href="regAlumno.jsp">REGISTRO DE ALUMNOS</a> 
     </body>
 </html>
