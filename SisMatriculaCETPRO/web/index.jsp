@@ -17,6 +17,9 @@
         </h1>
         <a href="regAlumno.jsp">REGISTRO DE ALUMNOS</a>
         <br><br/>
-        <a href="mantenerProfesor.jsp">Mantener datos del Profesor</a> 
+        <a href="mantenerProfesor.jsp">Mantener datos del Profesor</a>
+        <br><br/>
+        <a href="regResolucionDir.jsp">Registrar Resolución Directoral</a>
+        
     </body>
 </html>
