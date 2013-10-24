@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>
-            Hello team!
+            SISTEMA DE MATRICULA CETPRO
         </h1>
         <a href="regAlumno.jsp">REGISTRO DE ALUMNOS</a>
         <br><br/>
