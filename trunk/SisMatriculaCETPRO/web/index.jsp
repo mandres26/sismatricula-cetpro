@@ -15,6 +15,8 @@
         <h1>
             Hello team!
         </h1>
-        <a href="regAlumno.jsp">REGISTRO DE ALUMNOS</a> 
+        <a href="regAlumno.jsp">REGISTRO DE ALUMNOS</a>
+        <br><br/>
+        <a href="mantenerProfesor.jsp">Mantener datos del Profesor</a> 
     </body>
 </html>
