@@ -20,6 +20,8 @@
         <a href="mantenerProfesor.jsp">Mantener datos del Profesor</a>
         <br><br/>
         <a href="regResolucionDir.jsp">Registrar Resolución Directoral</a>
+        <br><br/>
+        <a href="manResolucionDir.jsp">Mantener Resolución Directoral</a>
         
     </body>
 </html>
