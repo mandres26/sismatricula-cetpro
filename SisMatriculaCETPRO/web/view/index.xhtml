@@ -1,14 +1,38 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Bienvenidos al Sistema de Matrícula - CETPRO Carabayllo</title>
+        <link href="Resources/CSS/login.css" type="txt/css" rel="Stylesheet"/>
     </h:head>
     <h:body>
-        Hello from Facelets
-        <br />
-        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+        
+        <div class="conteiner">
+        <h:form id="formLogin">  
+                
+                <p:panel header="Ingresar Usuario y Clave">  
+                    <h:panelGrid columns="2" cellpadding="5">  
+                        <h:outputLabel for="username" value="Usuario" />  
+                        <p:inputText value=""   
+                                     id="username" required="true" label="username" />  
+
+                        <h:outputLabel for="password" value="Clave:" />  
+                        <p:password value=""   
+                                       id="password" required="true" label="password" />
+                        <f:facet name="footer">  
+                            <p:commandButton id="loginButton" value="Login" update="growl"   
+                                             icon="icon-login"   
+                                             oncomplete="handleLoginRequest(xhr, status, args)"/>  
+                        </f:facet>  
+                    </h:panelGrid>  
+
+                </p:panel>  
+            </h:form>
+        </div>
+        
     </h:body>
 </html>
 
