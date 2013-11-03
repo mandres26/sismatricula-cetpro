@@ -7,5 +7,7 @@
     <property name="hibernate.connection.url">jdbc:mysql://db4free.net:3306/fisitp2</property>
     <property name="hibernate.connection.username">fisitp2</property>
     <property name="hibernate.connection.password">123456</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.current_session_context_class">thread</property>
   </session-factory>
 </hibernate-configuration>
