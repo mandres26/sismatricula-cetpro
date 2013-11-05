@@ -38,9 +38,27 @@
                     <p:inputText required="true" label="NumeroResolucion"  
                             value="#{RegistrarRDControl.nomEspecialidad}" />
                 </h:panelGrid>
-                
-                
-                <h:outputText value="This is a Modal Dialog. asdfasdfasdfasdfasdfasdfasdfasdf" />  
+                <p:dataTable id="nuevasE" var="espT" value="#{RegistrarRDControl.especialidadT}" 
+                         style="width:80%;text-align:center" 
+                         emptyMessage="Faltan agregar especialidades">  
+                    <f:facet name="header">  
+                        Especialides por agregar en la Resolución Directoral
+                    </f:facet>
+                    <p:column headerText="N° de Módulo">  
+                        <h:outputText value="#{espT.numModulo}" />  
+                    </p:column>  
+
+                    <p:column headerText="Nombre de módulo" width="50%">  
+                        <h:outputText value="#{espT.nomModulo}" />  
+                    </p:column>  
+
+                    <p:column headerText="N° de Horas">  
+                        <h:outputText value="#{espT.horModulo}" />  
+                    </p:column>  
+                </p:dataTable>
+                <br/>
+                <p:commandButton id="modalDialogButton5" value="Agregar" 
+                              type="button" />
             </p:dialog>  
             <!-- -->
             
