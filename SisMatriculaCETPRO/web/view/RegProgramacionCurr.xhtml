@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>Programacion Curricular</title>
+    </head>
+   
+    
+    <h:form>
+        <h:panelGrid columns="4" cellpadding="25">
+            <h:outputLabel for="name" value="De Resolucion Directoral" style="font-weight:bold"/>
+        </h:panelGrid>
+    </h:form>
+
+    <h:form>
+        <h:panelGrid columns="4" cellpadding="25">
+            <h:outputLabel for="name" value="Nro de Resolucion Directoral Vigente:" style="font-weight:bold"/>
+            <p:inputText id="name" value="#{pprBean.firstname}" />
+        </h:panelGrid>
+
+    </h:form>
+
+
+
+    <h:form id="form">				
+
+        <p:dataTable id="table_especialidad1" var="carsSmall" value="#{tableBean.carsSmall}" rowKey="#{carsSmall.model}"
+                     selection="#{tableBean.selectedCar}" selectionMode="single">
+
+            <f:facet name="header">
+                Especialidades de la Resolucion Directoral
+            </f:facet>
+
+            <p:column headerText="Especialidades">
+             
+            </p:column>
+
+            <p:column headerText="Nro de Horas">
+             
+            </p:column>
+
+
+            <f:facet name="footer">
+                <p:commandButton id="viewButton" value="Registrar Especialidad" icon="ui-icon-search"
+                                 update=":form:display" oncomplete="PF('carDialog').show()"/>
+            </f:facet>
+
+        </p:dataTable>
+
+        <p:dialog id="dialog" header="Car Detail" widgetVar="carDialog" resizable="false"
+                  width="200" showEffect="clip" hideEffect="fold">
+
+            <h:panelGrid id="display" columns="2" cellpadding="4">
+
+                <f:facet name="header">
+                    <p:graphicImage value="/images/cars/#{tableBean.selectedCar.manufacturer}.jpg"/>
+                </f:facet>
+
+               </h:panelGrid>
+        </p:dialog>
+
+    </h:form>
+
+
+
+    <h:form>
+        <h:panelGrid columns="4" cellpadding="25" >
+            <h:outputLabel for="name" value="De programacion Curricular Vigente" style="font-weight:bold"/>
+        </h:panelGrid>
+    </h:form>
+
+
+
+
+    <h:form id="form1">				
+
+        <p:dataTable id="table_especialidad1" var="carsSmall" value="#{tableBean.carsSmall}" rowKey="#{carsSmall.model}"
+                     selection="#{tableBean.selectedCar}" selectionMode="single">
+
+            <f:facet name="header">
+                Especialidades de la Programacion Curricular
+            </f:facet>
+
+            <p:column headerText="Especialidades">
+               
+            </p:column>
+
+            <p:column headerText="Nro de Horas">
+               
+            </p:column>
+
+
+
+
+        </p:dataTable>
+
+        <p:dialog id="dialog" header="Car Detail" widgetVar="carDialog" resizable="false"
+                  width="200" showEffect="clip" hideEffect="fold">
+
+            <h:panelGrid id="display" columns="2" cellpadding="4">
+
+                <f:facet name="header">
+                    <p:graphicImage value="/images/cars/#{tableBean.selectedCar.manufacturer}.jpg"/>
+                </f:facet>
+
+               
+
+            </h:panelGrid>
+        </p:dialog>
+
+    </h:form>
+
+
+    <h:form id="date">
+          <h:outputLabel for="name" value="Fecha de Inicio :  " style="font-weight:bold"/> 
+        <p:calendar value="#{calendarBean.date3}" id="popupButtonCal" showOn="button" />
+        <p:dialog header="Selected Dates" widgetVar="dialog" 
+                  showEffect="fade" hideEffect="fade">
+
+            <h:panelGrid id="display" columns="2" cellpadding="5">
+
+                <h:outputText value="Fecha " />
+                <h:outputText value="#{calendarBean.date3}" id="popupButtonDate">
+                    <f:convertDateTime pattern="d/M/yyyy"/>
+                </h:outputText>
+
+
+            </h:panelGrid>
+
+        </p:dialog>
+         <p></p>
+          <h:outputLabel for="name" value="Fecha de Termino" style="font-weight:bold"/> 
+                    <p:calendar value="#{calendarBean.date3}" id="popupButtonCal2" showOn="button" />
+                    <p:dialog header="Selected Dates" widgetVar="dialog" 
+                              showEffect="fade" hideEffect="fade">
+                        <h:panelGrid id="display2" columns="2" cellpadding="5">
+
+                            <h:outputText value="Fecha " />
+                            <h:outputText value="#{calendarBean.date3}" id="popupButtonDate2">
+                                <f:convertDateTime pattern="d/M/yyyy"/>
+                            </h:outputText>
+                        </h:panelGrid>
+                    </p:dialog>
+
+    </h:form>
+
+
+    <h:form>
+        <h:panelGrid columns="224" cellpadding="25">
+
+            <p:commandButton value="Registrar Programacion Curricular" update="display"/>  
+            <h:outputText id="display" value=" #{buttonBean.number}" />  
+
+        </h:panelGrid>
+
+        <p:separator />  
+
+    </h:form>
+
+
+
+
+
+    <h:form>
+        <h:panelGrid columns="4" cellpadding="25">
+            <h:outputLabel for="name" value="Especialidad :" style="font-weight:bold"/>
+            <p:inputText id="name" value="Reparacion de PC" />
+        </h:panelGrid>
+
+
+
+    </h:form>
+
+
+    <h:form id="form2">				
+
+        <p:dataTable id="table_especialidad1" var="carsSmall" value="#{tableBean.carsSmall}" rowKey="#{carsSmall.model}"
+                     selection="#{tableBean.selectedCar}" selectionMode="single">
+
+            <f:facet name="header">
+
+            </f:facet>
+
+            <p:column headerText="Modulos">
+             
+            </p:column>
+
+            <p:column headerText="Nro de Horas">
+             
+            </p:column>
+
+
+
+
+        </p:dataTable>
+
+        <p:dialog id="dialog" header="Car Detail" widgetVar="carDialog" resizable="false"
+                  width="200" showEffect="clip" hideEffect="fold">
+
+            <h:panelGrid id="display" columns="2" cellpadding="4">
+
+                <f:facet name="header">
+                    <p:graphicImage value="/images/cars/#{tableBean.selectedCar.manufacturer}.jpg"/>
+                </f:facet>
+
+
+            </h:panelGrid>
+        </p:dialog>
+
+    </h:form>
+
+
+    <h:form>
+        <h:panelGrid columns="4" cellpadding="25">
+            <h:outputLabel for="name" value="Capacidades Terminales" style="font-weight:bold"/>
+        </h:panelGrid>
+    </h:form>
+
+    <h:form id="form3">				
+
+        <p:dataTable id="table_especialidad2" var="carsSmall" value="#{tableBean.carsSmall}" rowKey="#{carsSmall.model}"
+                     selection="#{tableBean.selectedCar}" selectionMode="single">
+
+            <f:facet name="header">
+
+            </f:facet>
+
+            <p:column headerText="Nombre de las Capacidades Terminales">
+             
+            </p:column>
+
+        </p:dataTable>
+
+        <p:dialog id="dialog" header="Car Detail" widgetVar="carDialog" resizable="false"
+                  width="200" showEffect="clip" hideEffect="fold">
+
+            <h:panelGrid id="display" columns="2" cellpadding="4">
+
+                <f:facet name="header">
+                    <p:graphicImage value="/images/cars/#{tableBean.selectedCar.manufacturer}.jpg"/>
+                </f:facet>
+
+                <h:outputText value="Model:" />
+                <h:outputText value="#{tableBean.selectedCar.model}" />
+            </h:panelGrid>
+        </p:dialog>
+
+    </h:form>
+
+
+    <h:form>
+
+        <p:separator />
+
+        <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+
+            <p:selectOneButton value="#{buttonBean.number}">
+                <f:selectItem itemLabel="Eliminar Capacidad Terminal" itemValue="1" />
+                <f:selectItem itemLabel="Nueva Capacidad Terminal" itemValue="2" />
+                <f:selectItem itemLabel="Registrar Capacidades Terminales" itemValue="3" />
+            </p:selectOneButton>
+
+        </h:panelGrid>
+
+    </h:form>
+
+
+    
+    
+
+    <p:tabView id="tabView" >
+
+        <p:tab id="tab1" title="Grupo 1" >
+            <h:panelGrid columns="2" cellpadding="5">
+                <h:panelGrid columns="4" cellpadding="5">
+                    <h:outputLabel for="name" value="Nombre de Grupo" style="font-weight:bold"/>
+                    <p:inputText id="name1" value="#{pprBean.firstname}" />
+                    <h:outputLabel for="name" value="Nro Maximo de Alumnos:" style="font-weight:bold"/>
+                    <p:inputText id="name2" value="#{pprBean.firstname}" />
+
+                    <h:outputLabel for="name" value="Fecha de Inicio" style="font-weight:bold"/> 
+                    <p:calendar value="#{calendarBean.date3}" id="popupButtonCal" showOn="button" />
+                    <p:dialog header="Selected Dates" widgetVar="dialog" 
+                              showEffect="fade" hideEffect="fade">
+                        <h:panelGrid id="display" columns="2" cellpadding="5">
+
+                            <h:outputText value="Fecha " />
+                            <h:outputText value="#{calendarBean.date3}" id="popupButtonDate">
+                                <f:convertDateTime pattern="d/M/yyyy"/>
+                            </h:outputText>
+                        </h:panelGrid>
+                    </p:dialog>
+                    <p> </p>
+  <h:outputLabel for="name" value="Fecha de Termino" style="font-weight:bold"/> 
+                    <p:calendar value="#{calendarBean.date3}" id="popupButtonCal1" showOn="button" />
+                    <p:dialog header="Selected Dates" widgetVar="dialog" 
+                              showEffect="fade" hideEffect="fade">
+                        <h:panelGrid id="display1" columns="2" cellpadding="5">
+
+                            <h:outputText value="Fecha " />
+                            <h:outputText value="#{calendarBean.date3}" id="popupButtonDate1">
+                                <f:convertDateTime pattern="d/M/yyyy"/>
+                            </h:outputText>
+                        </h:panelGrid>
+                    </p:dialog>
+                </h:panelGrid>
+
+            </h:panelGrid>
+            
+            
+            <p:layout style="min-width:400px;min-height:200px;" id="layout">
+    <p:layoutUnit position="west" resizable="true" size="900" minSize="40" maxSize="800">
+        
+        Asignar Horario
+        <h:form>
+ <p:separator />
+	<p:panel header="Dias" style="margin-bottom:10px;">
+        <h:panelGrid columns="2" cellpadding="5">
+         <p:selectManyCheckbox id="lineDirection" value="#{formBean.selectedOptions}">
+            <f:selectItem itemLabel="Lunes" itemValue="Option 1" />
+            <f:selectItem itemLabel="Martes" itemValue="Option 2" />
+            <f:selectItem itemLabel="Miercoles" itemValue="Option 3" />
+            <f:selectItem itemLabel="Jueves" itemValue="Option 2" />
+            <f:selectItem itemLabel="Viernes" itemValue="Option 3" />
+            <f:selectItem itemLabel="Sabado" itemValue="Option 3" />
+            <f:selectItem itemLabel="Domingo" itemValue="Option 3" />
+        </p:selectManyCheckbox>
+
+        </h:panelGrid>
+            	</p:panel>
+    <p:separator />
+
+    </h:form>
+
+
+        <h:form id="form">
+
+    <p:growl id="msgs" showDetail="true"/>
+				
+	<p:panel header="Turno" style="margin-bottom:10px;">
+        <h:panelGrid columns="2" cellpadding="5">
+            <p:selectOneMenu id="city" value="Mañana">
+                <f:selectItem itemLabel="Mañana" itemValue="" />
+                  <f:selectItem itemLabel="Tarde" itemValue="" />
+                    <f:selectItem itemLabel="Noche" itemValue="" />
+                <f:selectItems value="Mañana" />
+                <f:selectItems value="Tarde" />
+                     </p:selectOneMenu>
+
+            
+        </h:panelGrid>
+
+        	</p:panel>
+
+</h:form>
+        
+        
+             <h:form id="form4">
+
+    <p:growl id="msgs" showDetail="true"/>
+				
+	<p:panel header="Horas" style="margin-bottom:10px;">
+        <h:panelGrid columns="2" cellpadding="5">
+            <p:selectOneMenu id="city" value="Mañana">
+                <f:selectItem itemLabel="8:30-10:30 AM" itemValue="" />
+                  <f:selectItem itemLabel="14:30-16:30 AM" itemValue="" />
+                    <f:selectItem itemLabel="20:30-22:30 AM" itemValue="" />
+                <f:selectItems value="Mañana" />
+                <f:selectItems value="Tarde" />
+                     </p:selectOneMenu>
+
+            
+        </h:panelGrid>
+
+        	</p:panel>
+
+</h:form>
+
+        
+					
+    </p:layoutUnit>
+
+                <p:layoutUnit position="center" maxSize="1200">
+        Asignar Profesor
+        <p:separator />
+           <h:form>
+        <h:panelGrid columns="4" cellpadding="25">
+            <h:outputLabel for="name" value="Buscar Profesor:" style="font-weight:bold"/>
+            <p:inputText id="name" value="#{pprBean.firstname}" />
+        </h:panelGrid>
+
+    </h:form>
+            
+        
+        
+        
+          <h:form id="form2">				
+
+        <p:dataTable id="table_especialidad1" var="carsSmall" value="#{tableBean.carsSmall}" rowKey="#{carsSmall.model}"
+                     selection="#{tableBean.selectedCar}" selectionMode="single">
+
+            <f:facet name="header">
+
+            </f:facet>
+
+            <p:column headerText="Codigo">
+             
+            </p:column>
+
+            <p:column headerText="Nombres">
+             
+            </p:column>
+
+
+
+
+        </p:dataTable>
+
+        <p:dialog id="dialog" header="Car Detail" widgetVar="carDialog" resizable="false"
+                  width="200" showEffect="clip" hideEffect="fold">
+
+            <h:panelGrid id="display" columns="2" cellpadding="4">
+
+                <f:facet name="header">
+                    <p:graphicImage value="/images/cars/#{tableBean.selectedCar.manufacturer}.jpg"/>
+                </f:facet>
+
+                <h:outputText value="Model:" />
+                <h:outputText value="#{tableBean.selectedCar.model}" />
+
+                <h:outputText value="Year:" />
+                <h:outputText value="#{tableBean.selectedCar.year}" />
+
+
+            </h:panelGrid>
+        </p:dialog>
+
+    </h:form>
+
+        
+         <p:separator />
+           <h:form>
+        <h:panelGrid columns="4" cellpadding="25">
+            <h:outputLabel for="name" value="Profesor" style="font-weight:bold"/>
+            <p:inputText id="name" value="#{pprBean.firstname}" />
+        </h:panelGrid>
+           </h:form>
+
+        
+           <h:form>
+        <h:panelGrid columns="224" cellpadding="25">
+
+            <p:commandButton value="Asignar" update="display"/>  
+            <h:outputText id="display" value=" #{buttonBean.number}" />  
+
+        </h:panelGrid>
+
+        <p:separator />  
+
+    </h:form>
+         
+                                         <h:form>
+        <h:panelGrid columns="224" cellpadding="25">
+
+            <p:commandButton value="Registrar Grupo" update="display"/>  
+            <h:outputText id="display" value=" #{buttonBean.number}" />  
+
+        </h:panelGrid>
+
+        <p:separator />  
+
+    </h:form>
+  
+         
+                                                  <h:form>
+        <h:panelGrid columns="224" cellpadding="25">
+
+            <p:commandButton value="Registrar Especialidad" update="display"/>  
+            <h:outputText id="display" value=" #{buttonBean.number}" />  
+
+        </h:panelGrid>
+
+        <p:separator />  
+
+    </h:form>
+         
+         
+    </p:layoutUnit>
+                
+                  
+
+                
+                
+</p:layout>
+                    
+            
+            
+
+         
+            
+            
+         
+  
+            
+        </p:tab>
+
+        <p:tab id="tab2" title="Grupo 2">
+            <h:panelGrid columns="2" cellpadding="10">
+                
+            </h:panelGrid>
+        </p:tab>
+
+        <p:tab id="tab3" title="Grupo 3">
+            <h:panelGrid columns="2" cellpadding="10">
+               
+            </h:panelGrid>
+        </p:tab>
+
+    </p:tabView>
+
+    
+    
+</html>
