@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core" 
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+      
+    <h:head>
+        <title>Sistema de Matricula CETPRO-Carabayllo</title>
+       
+    </h:head>
+    
+    <h:body>
+         <h1> MANTENER DATOS DEL PROFESOR </h1>
+       
+       
+        <h:form id="form">  
+  
+    <p:panel id="panel" header="Datos Personales " style="margin-bottom:10px;">  
+        <p:messages id="messages" />  
+  
+        <h:panelGrid columns="4">  
+            <h:outputLabel for="firstname" value="Nombre :" />  
+            <p:inputText id="firstname" value="#{pprBean.firstname}" required="true" label="Firstname">  
+                <f:validateLength minimum="2" />  
+            </p:inputText>  
+            <p:message for="firstname" />  
+            <h:outputText value="#{pprBean.firstname}" />  
+  
+            <h:outputLabel for="surname" value="Apellidos :" />  
+            <p:inputText id="surname" value="#{pprBean.surname}" required="true" label="Surname"/>  
+            <p:message for="surname" />  
+            <h:outputText value="#{pprBean.surname}" />  
+  
+            <h:outputLabel for="dni" value="DNI : " />  
+            <p:inputText id="dni" value="#{pprBean.surname}" required="true" label="Surname"/>  
+            <p:message for="dni" />  
+            <h:outputText value="#{pprBean.surname}" /> 
+            
+            <h:outputLabel for="Direccion" value="Direccion: " />  
+            <p:inputText id="Direccion" value="#{pprBean.surname}" required="true" label="Surname"/>  
+            <p:message for="Direccion" />  
+            <h:outputText value="#{pprBean.surname}" /> 
+            
+            
+        </h:panelGrid>  
+    </p:panel>  
+            
+          <h:panelGroup style="display:block; text-align:right">
+            
+            
+            <p:commandButton value="Registrar" update="display"/>  <br></br>
+          <h:outputText value="#{pprBean.firstname}" id="display" /> <br></br>
+          </h:panelGroup>
+</h:form>  
+        
+        
+        <h:form id="carForm">  
+  
+    <p:fieldset legend="Selecciona ">  
+        <p:dataTable id="availableCars" var="car" value="#{tableBean.carsSmall}">  
+            <p:column style="width:20px">  
+                <h:outputText id="dragIcon"  
+                    styleClass="ui-icon ui-icon-arrow-4" />  
+                <p:draggable for="dragIcon" revert="true" />  
+            </p:column>  
+  
+            <p:column headerText="Nombre">  
+                <h:outputText value="#{car.model}" />  
+            </p:column>  
+  
+            <p:column headerText="Apellidos">  
+                <h:outputText value="#{car.year}" />  
+            </p:column>  
+  
+            <p:column headerText="DNI">  
+                <h:outputText value="#{car.manufacturer}" />  
+                 
+            </p:column>  
+            
+            <p:column headerText="Direccion">  
+                <h:outputText value="#{car.direccion}" />  
+            </p:column> 
+            
+   
+        </p:dataTable>  
+        
+       
+    </p:fieldset>  
+  
+     
+     
+  
+    
+   
+       
+        </h:form> <br>
+       
+         <h:form>
+         <h:panelGroup style="display:block; text-align:center">
+            
+            <p:commandButton value="Modificar" update="cambiar"/>  
+          <h:outputText value="#{pprBean.firstname}" id="cambiar" />
+          
+          <p:commandButton value="Eliminar" update="morir"/>  <br></br> 
+           <h:outputText value="#{pprBean.firstname}" id="morir" />
+         </h:panelGroup>    
+   
+         
+          </h:form>  </br>
+         
+                    
+          
+           
+    </h:body>
+    
+    
+    
+
+ </html>
