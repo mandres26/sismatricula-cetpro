@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Mantener Especialidad en Resolución Directoral</title>
+    </h:head>
+    <h:body>
+        <h:form id="formManEsp" prependId="false" style="font-size:15px;text-align:center" >
+            <br/>
+            <h:outputText style="font-size:22px;font-weight:bold" value="MANTENER ESPECIALIDAD EN RESOLUCIÓN DIRECTORAL"/>
+            <br/><br/>
+            <center>
+            <h:panelGrid columns="6" cellpadding="5">
+                <h:outputText value="Número de Resolución: "/>
+                <p:inputText required="true" label="NombreEspecialidad"  
+                            value="#{MantenerESPControl.numResolucion}" /> 
+                <p:commandButton id="modalDialogButtonCargar" value="Cargar" 
+                              type="button" />
+	    </h:panelGrid>
+            <h:panelGrid columns="6" cellpadding="5">
+          	<h:outputText value="Fecha de Inicio: "/>
+                <p:calendar value="#{MantenerESPControl.date1}" 
+                            id="popupButtonCal1" showOn="button" navigator="true"/> 
+                <h:outputText value="Fecha de Término: "/>
+                <p:calendar value="#{MantenerESPControl.date2}" 
+                            id="popupButtonCal2" showOn="button" navigator="true"/> 
+	    </h:panelGrid>
+            
+            <br/>
+            <br/>
+            
+            <!-- DIALOG -->
+            <p:dialog id="modalDialog" header="Mantener Especialidad en Resolución Directoral" 
+                      widgetVar="dlgEspecialidad" modal="true" width="800">  
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputText value="¿Seguro de los Cambios?" />
+                </h:panelGrid>
+                <br/>
+                <p:commandButton id="modalDialogButton5" value="SI" 
+                              onclick="dlgEspecialidad.hide();" type="button" />
+                <p:commandButton id="modalDialogButton5" value="NO" 
+                              onclick="dlgEspecialidad.hide();" type="button" />
+            </p:dialog>  
+            <!-- -->
+            
+            
+            <!-- DIALOG -->
+            <p:dialog id="modalDialogModificar" header="Modificar Especialidad" 
+                      widgetVar="dlgEspecialidadModificar" modal="true" width="800">  
+                <h:panelGrid columns="3" cellpadding="5">
+                    <h:outputText value="Nombre de la Especialidad" />
+                    <p:inputText required="true" label="NombreEspecialidad"  
+                            value="#{MantenerESPControl.nomEspecialidad}" />
+                    <p:commandButton id="modalDialogButtonCargar" value="Buscar" 
+                              type="button" />
+                </h:panelGrid>
+                <p:dataTable id="modificaE" var="espT" value="#{MantenerESPControl.especialidadT}" 
+                         style="width:80%;text-align:center" 
+                         emptyMessage="Faltan agregar especialidades">  
+                    <f:facet name="header">  
+                        Datos de la Especialidad a Modificar
+                    </f:facet>
+                    <p:column headerText="N° de Módulo">  
+                        <h:outputText value="#{espT.numModulo}" />  
+                    </p:column>  
+
+                    <p:column headerText="Nombre de módulo" width="50%">  
+                        <h:outputText value="#{espT.nomModulo}" />  
+                    </p:column>  
+
+                    <p:column headerText="N° de Horas">  
+                        <h:outputText value="#{espT.horModulo}" />  
+                    </p:column>  
+                </p:dataTable>
+                <br/>
+                <p:commandButton id="modalDialogButton5" value="Modificar" 
+                              onclick="dlgEspecialidadModificar.hide();" type="button" />
+            </p:dialog>  
+            <!-- -->
+            
+            <!-- DIALOG -->
+            <p:dialog id="modalDialogEliminar" header="Eliminar Especialidad" 
+                      widgetVar="dlgEspecialidadEliminar" modal="true" width="800">  
+                <h:panelGrid columns="3" cellpadding="5">
+                    <h:outputText value="Nombre de la Especialidad" />
+                    <p:inputText required="true" label="NombreEspecialidad"  
+                            value="#{MantenerESPControl.nomEspecialidad}" />
+                    <p:commandButton id="modalDialogButtonCargar" value="Buscar" 
+                              type="button" />
+                </h:panelGrid>
+                <p:dataTable id="modificaE" var="espT" value="#{MantenerESPControl.especialidadT}" 
+                         style="width:80%;text-align:center" 
+                         emptyMessage="Faltan agregar especialidades">  
+                    <f:facet name="header">  
+                        Datos de la Especilidad a Eliminar
+                    </f:facet>
+                    <p:column headerText="N° de Módulo">  
+                        <h:outputText value="#{espT.numModulo}" />  
+                    </p:column>  
+
+                    <p:column headerText="Nombre de módulo" width="50%">  
+                        <h:outputText value="#{espT.nomModulo}" />  
+                    </p:column>  
+
+                    <p:column headerText="N° de Horas">  
+                        <h:outputText value="#{espT.horModulo}" />  
+                    </p:column>  
+                </p:dataTable>
+                <br/>
+                <p:commandButton id="modalDialogButton5" value="Eliminar" 
+                              onclick="dlgEspecialidadEliminar.hide();" type="button" />
+            </p:dialog>  
+            <!-- -->
+            
+            <!-- DIALOG -->
+            <p:dialog id="modalDialogAgregar" header="Agregar Especialidad" 
+                      widgetVar="dlgEspecialidadAgregar" modal="true" width="800">  
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputText value="Nombre de la Especialidad" />
+                    <p:inputText required="true" label="NombreEspecialidad"  
+                            value="#{MantenerESPControl.nomEspecialidad}" />
+                </h:panelGrid>
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputText value="Numero de Horas" />
+                    <p:inputText required="true" label="Numero de Horas"  
+                            value="#{MantenerESPControl.nomEspecialidad}" />
+                </h:panelGrid>
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputText value="Nº de Modulo" />
+                    <p:inputText required="true" label="Nº de Modulo"  
+                            value="#{MantenerESPControl.nomEspecialidad}" />
+                </h:panelGrid>
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputText value="Nombre del Modulo" />
+                    <p:inputText required="true" label="Nombre del Modulo"  
+                            value="#{MantenerESPControl.nomEspecialidad}" />
+                </h:panelGrid>
+                <br/>
+                <p:commandButton id="modalDialogButton5" value="Agregar" 
+                              onclick="dlgEspecialidadAgregar.hide();" type="button" />
+            </p:dialog>  
+            <!-- -->
+            
+            
+            
+            <p:dataTable id="nuevasE" var="esp" value="#{MantenerESPControl.especialidad}" 
+                         style="width:80%;text-align:center" 
+                         emptyMessage="Faltan agregar especialidades">  
+                <f:facet name="header">  
+                    Especialides Presentes en la Actual Resolucion Directoral
+		</f:facet>
+                <p:column headerText="Especialidad">  
+                    <h:outputText value="#{esp.nombre}" />  
+                </p:column>  
+
+                <p:column headerText="N° de Módulo">  
+                    <h:outputText value="#{esp.numModulo}" />  
+                </p:column>  
+
+                <p:column headerText="Nombre de módulo" width="50%">  
+                    <h:outputText value="#{esp.nomModulo}" />  
+                </p:column>  
+
+                <p:column headerText="N° de Horas">  
+                    <h:outputText value="#{esp.horModulo}" />  
+                </p:column>  
+            </p:dataTable>
+            
+            <h:panelGrid columns="3" cellpadding="5">
+                    <p:commandButton id="modalDialogButtonModificar" value="Modificar" 
+                              onclick="dlgEspecialidadModificar.show();" type="button" 
+                             update="modificaE"/>
+                    <p:commandButton id="modalDialogButtonCancelar" value="Eliminar" 
+                              onclick="dlgEspecialidadEliminar.show();" type="button" icon="ui-icon-minus"
+                             update="modificaE" />
+                    <p:commandButton id="modalDialogButtonAceptar" value="Agregar" 
+                             onclick="dlgEspecialidadAgregar.show();" type="button" icon="ui-icon-plus"
+                             update="modificaE"/>
+            </h:panelGrid>
+            
+             <br />
+             <br />
+             
+            <p:commandButton id="modalDialogButton" value="Guardar" 
+                             onclick="dlgEspecialidad.show();" type="button" 
+                             update="modificaE"/>
+            <br/>
+            
+            </center>
+        </h:form> 
+    </h:body>
+</html>
